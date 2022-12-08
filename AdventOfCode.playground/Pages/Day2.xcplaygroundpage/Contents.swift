@@ -9,6 +9,8 @@ let input = try String(contentsOf: inputURL!, encoding: String.Encoding.utf8)
 
 let rounds = input.components(separatedBy: "\n")
 
+// MARK: - Part 1
+
 let letterValues = ["AX", "BY", "CZ"]
 
 let totalScore = rounds.reduce(0, { partialTotal, round in
@@ -34,7 +36,9 @@ let totalScore = rounds.reduce(0, { partialTotal, round in
   return partialTotal + outcomeScore + myScore
 })
 
-// part 2
+print("totalScore", totalScore)
+
+// MARK: - Part 2
 
 /// score = shape score + round outcome score
 /// shape score = rock: 1, paper: 2, scissors: 3
@@ -45,7 +49,6 @@ let part2TotalScore = rounds.reduce(0, { partialTotal, round in
   let opLetter = letters.first!
   let outcomeLetter = letters.last!
   guard !opLetter.isEmpty else {
-    print("error", letters, partialTotal)
     return partialTotal
   }
 
@@ -86,3 +89,5 @@ let part2TotalScore = rounds.reduce(0, { partialTotal, round in
       
   return partialTotal + outcomeScore + myLetterScore
 })
+
+print("part2TotalScore", part2TotalScore)

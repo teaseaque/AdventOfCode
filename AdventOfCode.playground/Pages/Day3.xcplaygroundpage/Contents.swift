@@ -7,6 +7,8 @@ let alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 let rucksacks = input.components(separatedBy: "\n")
 
+// MARK: - Part 1
+
 let grandTotalPriorities = rucksacks.reduce(0) { partialResult, sack in
   let sackLength = sack.count
   let halfSack1 = sack.prefix(sackLength / 2)
@@ -22,9 +24,9 @@ let grandTotalPriorities = rucksacks.reduce(0) { partialResult, sack in
   return partialResult
 }
 
-print("grandTotalPriorities ", grandTotalPriorities)
+print("grandTotalPriorities", grandTotalPriorities)
 
-// part 2
+// MARK: - Part 2
 
 var runningGroupGrandTotal: Int = 0
 
